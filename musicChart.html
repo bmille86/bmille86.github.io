@@ -1,13 +1,24 @@
 <html>
   <head>
      <title>Music Chart</title>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
     <center>
-      <h1>Open the console</h1>
+      <h1>My Favorite Bruno Mars Songs</h1>
+        <div id="plot"></div>
       <script>
          console.log("This is from the internal JS");
-      </script>
+        let songNames = ["Uptown Funk", "24k Magic", "Leave the Door Open"];
+        let streams = [5261234829, 1669947691, 776838714]
+        let trace = {
+          x: songNames,
+          y: streams,
+          type: 'bar'
+       };
+       let data = [trace];
+       plotly.newPlot("plot", data);
+     </script>
       <a href="index.html">Click here to go back to the home page</a>
     </center>
   </body>
